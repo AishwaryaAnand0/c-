@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+int main() {
+    string str;
+    bool isPalindrome = true;
+
+    // Read a string from the user
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    // Remove spaces and convert to lowercase
+    string formatted_str;
+    for (char c : str) {
+        if (!isspace(c)) {
+            formatted_str += tolower(c);
+        }
+    }
+
+    // Check if the string is a palindrome using a while loop
+    int start = 0;
+    int end = formatted_str.length() - 1;
+
+    while (start < end) {
+        if (formatted_str[start] != formatted_str[end]) {
+            isPalindrome = false;
+            break;
+        }
+        ++start;
+        --end;
+    }
+
+    // Output the result
+    if (isPalindrome) {
+        cout << "The string is a palindrome." << endl;
+    } else {
+        cout << "The string is not a palindrome." << endl;
+    }
+
+    return 0;
+}
