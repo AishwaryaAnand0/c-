@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath> // Required for floor and ceil functions
+
+using namespace std;
+
+int main() {
+    double num;
+
+    // Read a floating-point number from the user
+    cout << "Enter a floating-point number: ";
+    cin >> num;
+
+    // Round the number to the nearest integer using floor and ceil functions
+    int rounded_down = floor(num); // Rounds down to the nearest integer
+    int rounded_up = ceil(num);    // Rounds up to the nearest integer
+
+    // Output the rounded numbers
+    cout << "Original number: " << num << endl;
+    cout << "Rounded down: " << rounded_down << endl;
+    cout << "Rounded up: " << rounded_up << endl;
+
+    return 0;
+}
