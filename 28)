@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+// Function to check if a number is a Neon number
+bool isNeon(int num) {
+    int square = num * num;
+    int sum = 0;
+
+    // Calculate the sum of digits of the square
+    while (square != 0) {
+        sum += square % 10;
+        square /= 10;
+    }
+
+    // Check if the sum of digits of the square is equal to the number
+    return sum == num;
+}
+
+int main() {
+    int num;
+
+    // Read a number from the user
+    cout << "Enter a positive integer: ";
+    cin >> num;
+
+    // Check if the number is a Neon number
+    if (isNeon(num)) {
+        cout << num << " is a Neon number." << endl;
+    } else {
+        cout << num << " is not a Neon number." << endl;
+    }
+
+    return 0;
+}
