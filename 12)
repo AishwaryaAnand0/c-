@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int num1, num2;
+
+    // Read two numbers from the user
+    cout << "Enter the first number: ";
+    cin >> num1;
+
+    cout << "Enter the second number: ";
+    cin >> num2;
+
+    // Check if the numbers are equal using ternary conditional operator
+    string result = (num1 == num2) ? "The numbers are equal." : "The numbers are not equal.";
+
+    // Output the result
+    cout << result << endl;
+
+    return 0;
+}
