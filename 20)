@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int num, digit, sum = 0;
+
+    // Read a number from the user
+    cout << "Enter a number: ";
+    cin >> num;
+
+    // Copy the number to a temporary variable
+    int temp = num;
+
+    // Calculate the sum of digits using a while loop
+    while (temp != 0) {
+        // Extract the last digit of the number
+        digit = temp % 10;
+        
+        // Add the digit to the sum
+        sum += digit;
+        
+        // Remove the last digit from the number
+        temp /= 10;
+    }
+
+    // Output the result
+    cout << "Sum of digits of " << num << " = " << sum << endl;
+
+    return 0;
+}
