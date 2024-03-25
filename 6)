@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cctype> // For the function std::isalpha and std::tolower
+
+using namespace std;
+
+bool isVowel(char ch) {
+    ch = tolower(ch); // Convert character to lowercase
+
+    // Check if the character is a vowel
+    return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
+}
+
+int main() {
+    char ch;
+
+    // Read a character from the user
+    cout << "Enter a character: ";
+    cin >> ch;
+
+    // Check if the character is an alphabet
+    if (isalpha(ch)) {
+        // Check if the character is a vowel
+        if (isVowel(ch)) {
+            cout << ch << " is a vowel." << endl;
+        } else {
+            cout << ch << " is a consonant." << endl;
+        }
+    } else {
+        cout << ch << " is not an alphabet character." << endl;
+    }
+
+    return 0;
+}
