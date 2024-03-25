@@ -1,0 +1,40 @@
+#include <iostream>
+#include <unordered_set>
+
+using namespace std;
+
+int squareSumOfDigits(int n) {
+    int sum = 0;
+    while (n > 0) {
+        int digit = n % 10;
+        sum += digit * digit;
+        n /= 10;
+    }
+    return sum;
+}
+
+bool isHappy(int n) {
+    unordered_set<int> seen;
+    while (n != 1 && seen.find(n) == seen.end()) {
+        seen.insert(n);
+        n = squareSumOfDigits(n);
+    }
+    return n == 1;
+}
+
+int main() {
+    int num;
+
+    // Read a number from the user
+    cout << "Enter a positive integer: ";
+    cin >> num;
+
+    // Check if the number is a happy number
+    if (isHappy(num)) {
+        cout << num << " is a happy number." << endl;
+    } else {
+        cout << num << " is not a happy number." << endl;
+    }
+
+    return 0;
+}
