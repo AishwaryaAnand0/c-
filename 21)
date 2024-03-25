@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int num1, num2;
+
+    // Read two numbers from the user
+    cout << "Enter first number: ";
+    cin >> num1;
+
+    cout << "Enter second number: ";
+    cin >> num2;
+
+    int gcd;
+
+    // Ensure both numbers are positive
+    if (num1 <= 0 || num2 <= 0) {
+        cout << "Both numbers must be positive integers." << endl;
+    } else {
+        // Initialize variables for calculation
+        int smaller = (num1 < num2) ? num1 : num2; // Find the smaller number
+        gcd = smaller;
+
+        // Calculate GCD using the Euclidean algorithm with a do-while loop
+        do {
+            if (num1 % gcd == 0 && num2 % gcd == 0) {
+                break; // Found the GCD
+            }
+            gcd--;
+        } while (gcd >= 1);
+
+        // Output the result
+        cout << "GCD of " << num1 << " and " << num2 << " is: " << gcd << endl;
+    }
+
+    return 0;
+}
